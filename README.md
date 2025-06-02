@@ -8,7 +8,7 @@ update_cookies.py: A Python script that launches Firefox (headless or visible), 
 
 run_cookies.sh: A shell script that sets up the required GUI environment variables (DISPLAY, XAUTHORITY, DBUS_SESSION_BUS_ADDRESS, etc.) and then runs update_cookies.py. This allows the script to behave like it would when launched from a graphical environment such as PyCharm.
 
-restart_instance.sh: A helper script to ensure that only one instance of the main tool (e.g. start.py) runs at a time. It kills any previous instance and starts the new one within the correct virtual environment.
+run_script.sh: A helper script to ensure that only one instance of the main tool (e.g. start.py) runs at a time. It kills any previous instance and starts the new one within the correct virtual environment.
 
 # Required path adjustments:
 The user must manually update the following paths in the scripts:
