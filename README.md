@@ -3,7 +3,7 @@ These scripts were developed to automate the extraction of Steam login cookies (
 
 However, due to limitations in how Firefox handles profiles—especially when using Snap packages or running scripts outside a full desktop session—it was necessary to simulate a proper graphical environment. This includes exporting display-related environment variables and supporting Wayland/X11 sessions.
 
-Overview of the scripts:
+# Overview of the scripts:
 update_cookies.py: A Python script that launches Firefox (headless or visible), checks if the user is logged in, and extracts the necessary cookies. If the user is not logged in, it automatically clicks the "Login" button and retries. If still unsuccessful, it re-launches Firefox in visible mode for manual login.
 
 run_cookies.sh: A shell script that sets up the required GUI environment variables (DISPLAY, XAUTHORITY, DBUS_SESSION_BUS_ADDRESS, etc.) and then runs update_cookies.py. This allows the script to behave like it would when launched from a graphical environment such as PyCharm.
