@@ -1,3 +1,4 @@
+#General description
 These scripts were developed to automate the extraction of Steam login cookies (sessionid and steamLoginSecure) using Firefox and Selenium. Since Steam requires authenticated sessions for certain operations, the cookies are necessary for tools like linux-steam-idle to function properly.
 
 However, due to limitations in how Firefox handles profiles—especially when using Snap packages or running scripts outside a full desktop session—it was necessary to simulate a proper graphical environment. This includes exporting display-related environment variables and supporting Wayland/X11 sessions.
@@ -9,7 +10,7 @@ run_cookies.sh: A shell script that sets up the required GUI environment variabl
 
 restart_instance.sh: A helper script to ensure that only one instance of the main tool (e.g. start.py) runs at a time. It kills any previous instance and starts the new one within the correct virtual environment.
 
-Required path adjustments:
+#Required path adjustments:
 The user must manually update the following paths in the scripts:
 
 FIREFOX_BINARY – the full path to your Firefox binary (e.g. /home/user/firefox/firefox)
@@ -26,15 +27,14 @@ SCRIPT_PATH – path to the Python script you want to launch (e.g. start.py)
 
 GUI-related variables in run_cookies.sh (XAUTHORITY, DISPLAY, etc.) may also need to be updated depending on your desktop session
 
-CRONTAB:
+#CRONTAB:
 Make sure both scripts (run_cookies.sh and run_script.sh) have execute permissions (chmod +x script.sh).
 
 To edit the crontab for your current user, use:
 crontab -e
 
-
-# Runs the cookie update script every hour at a specific minute
+Runs the cookie update script every hour at a specific minute
 21 * * * * bash /path/to/run_cookies.sh >> /path/to/run_cookies.log 2>&1
 
-# Runs the main script every 6 hours, at the start of the hour
+Runs the main script every 6 hours, at the start of the hour
 0 */6 * * * /path/to/run_script.sh >> /path/to/run_script.log 2>&1
